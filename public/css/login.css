@@ -1,0 +1,23 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal-content {
+    width: 400px;
+    margin: 120px auto 0px auto;
+}
+
+.modal-content img {
+    margin: -55px auto auto auto;
+    height: 120px;
+}
+
+.modal-body {
+    padding: 20px 40px 30px 40px;
+}
+
+#loading {
+    height: 20px;
+    width: 20px;
+    margin: 0 0;
+}

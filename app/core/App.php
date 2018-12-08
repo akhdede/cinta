@@ -1,7 +1,7 @@
 <?php
 
 class App {
-    protected $controller = 'Home';
+    protected $controller = 'Auth';
     protected $method = 'index';
     protected $params = [];
     
@@ -40,8 +40,6 @@ class App {
         // jalankan controller & method, serta params jika ada
 
         call_user_func_array([$this->controller, $this->method], $this->params);
-
-
 
     }
 
