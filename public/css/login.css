@@ -2,6 +2,11 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+div#message {
+    width: 400px;
+    margin: 20px auto 0px auto;
+}
+
 .modal-content {
     width: 400px;
     margin: 120px auto 0px auto;
