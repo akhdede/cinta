@@ -1,6 +1,6 @@
 $(function() {   
 
-    const loading = 'Logging in <img src="http://localhost/cinta/img/loading.gif" id="loading">';
+    const loading = 'Logging in <img src="http://192.168.1.25/cinta/img/loading.gif" id="loading">';
 
     $('button[type=submit]').on('click', function() {
         $(this).html(loading);
@@ -8,7 +8,7 @@ $(function() {
         var password = $('#password').val().trim();
 
         $.ajax({
-            url:'http://localhost/cinta/auth/proses_login',
+            url:'http://192.168.1.25/cinta/auth/proses_login',
             type:'post',
             data:{nip:nip, password:password},
             success:function(response) {
