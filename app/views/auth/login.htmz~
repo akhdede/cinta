@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/login.css">
+</head>
+<body class="text-center">
+    <div id="message"><?= Flasher::flash() ?></div>
+    <div class="modal-content">
+        <img src="<?= BASEURL ?>/img/dede.png" class="rounded-circle img-thumbnail">
+        <span class="text-danger h1 mt-3">C I N T A</span>
+        <span class="h7"><span class="text-danger font-weight-bold font-style-italic">C</span>atatan K<span class="text-danger font-weight-bold">I</span>nerja Haria<span class="text-danger font-weight-bold">N</span> Apara<span class="text-danger font-weight-bold">T</span>ur Sipil Negar<span class="text-danger font-weight-bold">A</span></span>
+        <div class="modal-body">
+          <?= $_SESSION['user']?>
+            <form method="post">
+                <div class="form-group">
+                    <input type="number" name="nip" id="nip" class="form-control mb-2" placeholder="Masukkan NIP">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Masukkan Password">
+                </div>
+                <button type="submit" id="login" class="btn btn-primary form-control">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="<?= BASEURL ?>/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            
+            const loading = 'Logging in <img src="<?= BASEURL ?>/img/loading.gif" id="loading">';
+            
+            console.log(loading);
+            
+            $('button[type=submit]').on('click', function() {
+                $(this).html(loading);
+                var nip = $('#nip').val().trim();
+                var password = $('#password').val().trim();
+                
+                $.ajax({
+                    url:'<?= BASEURL ?>/auth/proses_login',
+                    type:'post',
+                    data:{nip:nip, password:password},
+                    success:function(response) {
+                        if (response == 1) {
+                            console.log('berhasil');
+                        }
+                        
+                    }
+                });
+            });
+            setTimeout(function() {
+                $('#message').fadeOut('slow');
+            }, 3000);
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,12 @@
+<?php
+class Dashboard extends Controller {
+    public function __construct() {
+        LoginStatus::notLogIn('auth');
+    }
+
+    public function index() {
+        $this->view('templates/header');
+        $this->view('templates/content');
+        $this->view('templates/footer');
+    }
+}

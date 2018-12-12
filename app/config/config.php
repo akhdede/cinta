@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://192.168.1.25/cinta');
+define('BASEURL', 'http://localhost/cinta');
 
 // DB
 define('DB_HOST', 'localhost');

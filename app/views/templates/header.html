@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/admin.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>/fontawesome/css/all.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-md navbar-light bg-color fixed-top">
+            <a href="#" class="navbar-brand text-white">
+                <span class="h3 font-weight-bold">C I N T A</span>
+                <span class="small-brand">( Catatan Kinerja Harian Aparatur Sipil Negara )</span>
+            </a>
+            <a href="<?= BASEURL ?>/auth/logout" class="btn btn-light logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <aside class="sidebar navbar-collapse">
+            <div class="menu">
+                <ul class="menu-content">
+                    <li class="list-content">
+                        <a href=""><i class="fas fa-home"></i> <span>Home</span></a>
+                    </li>
+                    <li class="list-content">
+                        <a href="#"><i class="fas fa-cog"></i> <span>Setup</span> <i class="fas fa-sort-down float-right"></i></a>
+                        <ul>
+                            <li>
+                                <a href=""><i class="fas fa-building"></i> <span>Instansi</span></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fas fa-sitemap"></i> <span>Struktur</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-content">
+                        <a href=""><i class="fas fa-address-book"></i> <span>Data Pegawai</span></a>
+                    </li>
+                    <li class="list-content logout">
+                        <a href="<?= BASEURL ?>/auth/logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                    </li>
+                </ul>
+            </div>
+        </aside>

@@ -2,11 +2,7 @@
 class Auth extends Controller {
 
     public function __construct() {
-        if (isset($_SESSION['user'])) {
-            if ($_SESSION['user']['status'] == 'logged_in') {
-                header('Location: ' . BASEURL . '/dashboard');
-            }
-        }
+        LoginStatus::isLoggedIn('dashboard');
     }
 
     public function index() {

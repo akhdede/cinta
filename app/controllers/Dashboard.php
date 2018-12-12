@@ -1,12 +1,13 @@
 <?php
 class Dashboard extends Controller {
     public function __construct() {
-        if ($_SESSION['user']['status'] != 'logged_in') {
-            header('Location: ' . BASEURL . '/auth');
-        }
+        LoginStatus::notLogIn('auth');
     }
 
     public function index() {
-        $this->view('templates/template');
+        $data = ['isi' => 'dashboard/index'];
+        $this->view('templates/header');
+        $this->view('templates/content', $data);
+        $this->view('templates/footer');
     }
 }
